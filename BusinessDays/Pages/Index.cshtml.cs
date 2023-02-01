@@ -20,13 +20,10 @@ namespace BusinessDays.Pages
 {
     public class IndexModel : PageModel
     {
-        private readonly ILogger<IndexModel> _logger;
         [BindProperty]
         public List<PublicHoliday> PublicHolidays { get; set; }
         [BindProperty]
-        public double DaysToAdd { get; set; }
 
-        [BindProperty]
         public string Result { get; set; }
         [BindProperty]
         public NormalDay ChosenDay { get; set; } = new NormalDay
@@ -35,9 +32,8 @@ namespace BusinessDays.Pages
             States = new[] { State.all }
         };
 
-        public IndexModel(ILogger<IndexModel> logger)
+        public IndexModel()
         {
-            _logger = logger;
         }
 
         public void OnGet()
@@ -45,9 +41,8 @@ namespace BusinessDays.Pages
             RetrieveData();
         }
 
-        private void RetrieveData(double daysRange = 0)
+        private void RetrieveData()
         {
-
             string fileContents = System.IO.File.ReadAllText("data.json");
 
             var opts = new JsonSerializerOptions
@@ -55,42 +50,42 @@ namespace BusinessDays.Pages
                 Converters = { new StateEnumConverter() }
             };
 
-            PublicHolidays = JsonSerializer.Deserialize<List<PublicHoliday>>(fileContents, opts);
-
-
-            var whereFunc = new Func<PublicHoliday, bool>(
-                (publicHoliday) =>
-                    {
-                        var first = daysRange > 0
-                        ? publicHoliday.Date >= ChosenDay.Date && publicHoliday.Date <= ChosenDay.Date.AddDays(daysRange)
-                        : ChosenDay.Date >= publicHoliday.Date && ChosenDay.Date.AddDays(daysRange) <= publicHoliday.Date;
-
-                        var second = ChosenDay.States.Any(x => publicHoliday.States.Any(k => k == x));
-
-
-                        return first && second;
-                    }
-                );
-
-            PublicHolidays = PublicHolidays?.Where(whereFunc).ToList();
-        }
-
-        public IActionResult OnPost()
-        {
-            RetrieveData(DaysToAdd);
-
-            var result =
-                PublicHolidays.FirstOrDefault(x =>
-                    x.Date.ToShortDateString() == ChosenDay.Date.ToShortDateString() &&
-                    (x.States.Any(x => ChosenDay.States.Any(k => k == x)) || x.States.Contains(State.all))
-                );
-
-            return Page();
+            PublicHolidays = JsonSerializer.Deserialize<List<PublicHoliday>>(fileContents, opts) ?? new();
         }
 
         public IActionResult OnPostCheckYear()
         {
-            RetrieveData(DaysToAdd);
+            // Get from DB
+            RetrieveData();
+
+            /**
+             * 
+             * The Request model would be like the prop ChosenDay. 
+             * 
+             * Something like: 
+             * {
+             *      Date            as DateTime,
+             *      States          as States[] | string[],
+             *      DaysToAdd       as double
+             * }
+             * 
+             */
+
+            var conditions = new Func<PublicHoliday, bool>(
+                (publicHoliday) =>
+                {
+                    var checkRangeDay = ChosenDay.DaysToAdd > 0
+                    ? publicHoliday.Date >= ChosenDay.Date && publicHoliday.Date <= ChosenDay.Date.AddDays(ChosenDay.DaysToAdd)
+                    : ChosenDay.Date >= publicHoliday.Date && ChosenDay.Date.AddDays(ChosenDay.DaysToAdd) <= publicHoliday.Date;
+
+                    var checkStates = ChosenDay.States.Any(x => publicHoliday.States.Any(k => k == x));
+
+
+                    return checkRangeDay && checkStates;
+                }
+                );
+
+            PublicHolidays = PublicHolidays?.Where(conditions).ToList() ?? new();
 
 
             return Page();

@@ -35,7 +35,7 @@
         <input type="date" class="form-control" asp-for="ChosenDay.Date">
         <select asp-items="Html.GetEnumSelectList<State>()" asp-for="ChosenDay.States" multiple class="form-select" aria-label="state"></select>
         <label for="DaysToAdd">Days to add:</label>
-        <input type="number" class="form-control" asp-for="DaysToAdd">
+        <input type="number" class="form-control" asp-for="ChosenDay.DaysToAdd">
 
         <input class="btn btn-primary mt-3" type="submit" value="Check It" />
     </div>
