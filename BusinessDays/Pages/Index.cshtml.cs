@@ -28,17 +28,14 @@ namespace BusinessDays.Pages
         [BindProperty]
         public NormalDay ChosenDay { get; set; } = new NormalDay
         {
-            Date = DateTime.Now,
-            States = new[] { State.all }
+            Date = DateTime.Now
         };
-
-        public IndexModel()
-        {
-        }
 
         public void OnGet()
         {
             RetrieveData();
+
+            SerializeResult();
         }
 
         private void RetrieveData()
@@ -51,6 +48,18 @@ namespace BusinessDays.Pages
             };
 
             PublicHolidays = JsonSerializer.Deserialize<List<PublicHoliday>>(fileContents, opts) ?? new();
+        }
+
+        private void SerializeResult()
+        {
+            Result = JsonSerializer.Serialize(
+                            PublicHolidays,
+                            new JsonSerializerOptions
+                            {
+                                WriteIndented = true,
+                                IncludeFields = true,
+                                Converters = { new StateEnumConverter() }
+                            });
         }
 
         public IActionResult OnPostCheckYear()
@@ -78,7 +87,10 @@ namespace BusinessDays.Pages
                     ? publicHoliday.Date >= ChosenDay.Date && publicHoliday.Date <= ChosenDay.Date.AddDays(ChosenDay.DaysToAdd)
                     : ChosenDay.Date >= publicHoliday.Date && ChosenDay.Date.AddDays(ChosenDay.DaysToAdd) <= publicHoliday.Date;
 
-                    var checkStates = ChosenDay.States.Any(x => publicHoliday.States.Any(k => k == x));
+
+                    var checkStates = ChosenDay.States is null
+                            || ChosenDay.States.Length is 0
+                            || ChosenDay.States.Any(x => publicHoliday.States?.Any(k => k == x) ?? false);
 
 
                     return checkRangeDay && checkStates;
@@ -87,6 +99,7 @@ namespace BusinessDays.Pages
 
             PublicHolidays = PublicHolidays?.Where(conditions).ToList() ?? new();
 
+            SerializeResult();
 
             return Page();
         }

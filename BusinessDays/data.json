@@ -1,332 +1,202 @@
 ﻿[
   {
     "name": "Anzac Day",
-    "date": "2023-04-25T00:00:00.000Z",
-    "states": [
-      "act",
-      "nsw",
-      "nt",
-      "qld",
-      "sa",
-      "tas",
-      "vic",
-      "wa"
-    ],
-    "countries": [
-      "Australia"
-    ]
+    "day": 25,
+    "month": 4,
+    "year": 2023,
+    "states": [ "act", "nsw", "nt", "qld", "sa", "tas", "vic", "wa" ],
+    "country": "AU"
   },
   {
     "name": "Australia Day",
-    "date": "2023-01-26T00:00:00.000Z",
-    "states": [
-      "act",
-      "nsw",
-      "nt",
-      "qld",
-      "sa",
-      "tas",
-      "vic",
-      "wa"
-    ],
-    "countries": [
-      "Australia"
-    ]
+    "day": 26,
+    "month": 1,
+    "year": 2023,
+    "states": [ "act", "nsw", "nt", "qld", "sa", "tas", "vic", "wa" ],
+    "country": "AU"
   },
   {
     "name": "Bank Holiday",
-    "date": "2023-08-07T00:00:00.000Z",
-    "states": [
-      "nsw",
-      "nt"
-    ],
-    "countries": [
-      "Australia"
-    ]
+    "day": 7,
+    "month": 8,
+    "year": 2023,
+    "states": [ "nsw", "nt" ],
+    "country": "AU"
   },
   {
     "name": "Boxing Day",
-    "date": "2023-12-26T00:00:00.000Z",
-    "states": [
-      "act",
-      "nsw",
-      "nt",
-      "qld",
-      "sa",
-      "tas",
-      "vic",
-      "wa"
-    ],
-    "countries": [
-      "Australia"
-    ]
+    "day": 26,
+    "month": 12,
+    "year": 2023,
+    "states": [ "act", "nsw", "nt", "qld", "sa", "tas", "vic", "wa" ],
+    "country": "AU"
   },
   {
     "name": "Canberra Day",
-    "date": "2023-03-13T00:00:00.000Z",
-    "states": [
-      "act",
-      "sa",
-      "vic"
-    ],
-    "countries": [
-      "Australia"
-    ]
+    "day": 13,
+    "month": 3,
+    "year": 2023,
+    "states": [ "act", "sa", "vic" ],
+    "country": "AU"
   },
   {
     "name": "Christmas Day ",
-    "date": "2023-12-25T00:00:00.000Z",
-    "states": [
-      "act",
-      "nsw",
-      "nt",
-      "qld",
-      "sa",
-      "tas",
-      "vic",
-      "wa"
-    ],
-    "countries": [
-      "Australia"
-    ]
+    "day": 25,
+    "month": 12,
+    "year": 2023,
+    "states": [ "act", "nsw", "nt", "qld", "sa", "tas", "vic", "wa" ],
+    "country": "AU"
   },
   {
     "name": "Easter Monday",
-    "date": "2023-04-10T00:00:00.000Z",
-    "states": [
-      "act",
-      "nsw",
-      "nt",
-      "qld",
-      "sa",
-      "tas",
-      "vic",
-      "wa"
-    ],
-    "countries": [
-      "Australia"
-    ]
+    "day": 10,
+    "month": 4,
+    "year": 2023,
+    "states": [ "act", "nsw", "nt", "qld", "sa", "tas", "vic", "wa" ],
+    "country": "AU"
   },
   {
     "name": "Easter Saturday",
-    "date": "2023-04-08T00:00:00.000Z",
-    "states": [
-      "act",
-      "nsw",
-      "nt",
-      "qld",
-      "sa",
-      "tas",
-      "vic",
-      "wa"
-    ],
-    "countries": [
-      "Australia"
-    ]
+    "day": 8,
+    "month": 4,
+    "year": 2023,
+    "states": [ "act", "nsw", "nt", "qld", "sa", "tas", "vic", "wa" ],
+    "country": "AU"
   },
   {
     "name": "Easter Sunday",
-    "date": "2023-04-09T00:00:00.000Z",
-    "states": [
-      "nsw",
-      "act",
-      "nt",
-      "qld",
-      "sa",
-      "tas",
-      "vic",
-      "wa"
-    ],
-    "countries": [
-      "Australia"
-    ]
+    "day": 9,
+    "month": 4,
+    "year": 2023,
+    "states": [ "nsw", "act", "nt", "qld", "sa", "tas", "vic", "wa" ],
+    "country": "AU"
   },
   {
     "name": "Easter Tuesday",
-    "date": "2023-04-11T00:00:00.000Z",
-    "states": [
-      "tas"
-    ],
-    "countries": [
-      "Australia"
-    ]
+    "day": 11,
+    "month": 4,
+    "year": 2023,
+    "states": [ "tas" ],
+    "country": "AU"
   },
   {
     "name": "Eight Hours Day",
-    "date": "2023-03-14T00:00:00.000Z",
-    "states": [
-      "tas"
-    ],
-    "countries": [
-      "Australia"
-    ]
+    "day": 14,
+    "month": 3,
+    "year": 2023,
+    "states": [ "tas" ],
+    "country": "AU"
   },
   {
     "name": "Good Friday",
-    "date": "2023-04-07T00:00:00.000Z",
-    "states": [
-      "act",
-      "nsw",
-      "nt",
-      "qld",
-      "sa",
-      "tas",
-      "vic",
-      "wa"
-    ],
-    "countries": [
-      "Australia"
-    ]
+    "day": 7,
+    "month": 4,
+    "year": 2023,
+    "states": [ "act", "nsw", "nt", "qld", "sa", "tas", "vic", "wa" ],
+    "country": "AU"
   },
   {
     "name": "Labour Day",
-    "date": "2023-10-02T00:00:00.000Z",
-    "states": [
-      "act",
-      "nsw",
-      "qld"
-    ],
-    "countries": [
-      "Australia"
-    ]
+    "day": 2,
+    "month": 10,
+    "year": 2023,
+    "states": [ "act", "nsw", "qld" ],
+    "country": "AU"
   },
   {
     "name": "Labour Day",
-    "date": "2023-10-07T00:00:00.000Z",
-    "states": [
-      "sa"
-    ],
-    "countries": [
-      "Australia"
-    ]
+    "day": 7,
+    "month": 10,
+    "year": 2023,
+    "states": [ "sa" ],
+    "country": "AU"
   },
   {
     "name": "Labour Day",
-    "date": "2023-03-06T00:00:00.000Z",
-    "states": [
-      "wa"
-    ],
-    "countries": [
-      "Australia"
-    ]
+    "day": 6,
+    "month": 3,
+    "year": 2023,
+    "states": [ "wa" ],
+    "country": "AU"
   },
   {
     "name": "May Day",
-    "date": "2023-05-01T00:00:00.000Z",
-    "states": [
-      "nt",
-      "qld"
-    ],
-    "countries": [
-      "Australia"
-    ]
+    "day": 1,
+    "month": 5,
+    "year": 2023,
+    "states": [ "nt", "qld" ],
+    "country": "AU"
   },
   {
     "name": "Melbourne Cup",
-    "date": "2023-11-07T00:00:00.000Z",
-    "states": [
-      "vic"
-    ],
-    "countries": [
-      "Australia"
-    ]
+    "day": 7,
+    "month": 11,
+    "year": 2023,
+    "states": [ "vic" ],
+    "country": "AU"
   },
   {
     "name": "New Year's Day",
-    "date": "2023-01-01T00:00:00.000Z",
-    "states": [
-      "act",
-      "nsw",
-      "nt",
-      "qld",
-      "sa",
-      "tas",
-      "vic",
-      "wa"
-    ],
-    "countries": [
-      "Australia"
-    ]
+    "day": 1,
+    "month": 1,
+    "year": 2023,
+    "states": [ "act", "nsw", "nt", "qld", "sa", "tas", "vic", "wa" ],
+    "country": "AU"
   },
   {
     "name": "New Year's Day (observed)",
-    "date": "2023-01-02T00:00:00.000Z",
-    "states": [
-      "act",
-      "nsw",
-      "nt",
-      "qld",
-      "sa",
-      "tas",
-      "vic",
-      "wa"
-    ],
-    "countries": [
-      "Australia"
-    ]
+    "day": 2,
+    "month": 1,
+    "year": 2023,
+    "states": [ "act", "nsw", "nt", "qld", "sa", "tas", "vic", "wa" ],
+    "country": "AU"
   },
   {
     "name": "Queen's Birthday",
-    "date": "2023-06-12T00:00:00.000Z",
-    "states": [
-      "act",
-      "nsw",
-      "nt",
-      "vic"
-    ],
-    "countries": [
-      "Australia"
-    ]
+    "day": 12,
+    "month": 6,
+    "year": 2023,
+    "states": [ "act", "nsw", "nt", "vic" ],
+    "country": "AU"
   },
   {
     "name": "Queen's Birthday",
-    "date": "2023-09-25T00:00:00.000Z",
-    "states": [
-      "wa"
-    ],
-    "countries": [
-      "Australia"
-    ]
+    "day": 25,
+    "month": 9,
+    "year": 2023,
+    "states": [ "wa" ],
+    "country": "AU"
   },
   {
     "name": "Queen's Birthday / Volunteer's Day",
-    "date": "2023-06-10T00:00:00.000Z",
-    "states": [
-      "sa",
-      "tas"
-    ],
-    "countries": [
-      "Australia"
-    ]
+    "day": 10,
+    "month": 6,
+    "year": 2023,
+    "states": [ "sa", "tas" ],
+    "country": "AU"
   },
   {
     "name": "Reconciliation Day",
-    "date": "2023-05-29T00:00:00.000Z",
-    "states": [
-      "act"
-    ],
-    "countries": [
-      "Australia"
-    ]
+    "day": 29,
+    "month": 5,
+    "year": 2023,
+    "states": [ "act" ],
+    "country": "AU"
   },
   {
     "name": "Royal Queensland Show (Brisbane only)",
-    "date": "2023-08-16T00:00:00.000Z",
-    "states": [
-      "qld"
-    ],
-    "countries": [
-      "Australia"
-    ]
+    "day": 16,
+    "month": 8,
+    "year": 2023,
+    "states": [ "qld" ],
+    "country": "AU"
   },
   {
     "name": "Western Australia Day",
-    "date": "2023-06-05T00:00:00.000Z",
-    "states": [
-      "wa"
-    ],
-    "countries": [
-      "Australia"
-    ]
+    "day": 5,
+    "month": 6,
+    "year": 2023,
+    "states": [ "wa" ],
+    "country": "AU"
   }
 ]

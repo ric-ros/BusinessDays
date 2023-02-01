@@ -1,4 +1,5 @@
-﻿using System.Text.Json;
+﻿using System.Formats.Asn1;
+using System.Text.Json;
 using System.Text.Json.Serialization;
 
 namespace BusinessDays.Models
@@ -12,33 +13,42 @@ namespace BusinessDays.Models
         sa,
         tas,
         vic,
-        wa,
-        all //just as backup - shouldn't be used anytime
+        wa
     }
 
     public class PublicHoliday
     {
         [JsonPropertyName("name")]
         public string Name { get; set; }
-        [JsonPropertyName("date")]
-        public DateTime Date { get; set; }
         [JsonPropertyName("states")]
-        public State[] States { get; set; } = new[] { State.all };
-        [JsonPropertyName("countries")]
-        public string[] Countries { get; set; } = new[] { "Australia" };
+        public State[]? States { get; set; }
+        [JsonPropertyName("country")]
+        public string Country { get; set; } = "AU";
+        [JsonPropertyName("year")]
+        public int Year { get; set; }
+        [JsonPropertyName("month")]
+        public int Month { get; set; }
+        [JsonPropertyName("day")]
+        public int Day { get; set; }
+        [JsonPropertyName("date")]
+        public DateTimeOffset Date => new(new DateTime(Year, Month, Day));
 
         public PublicHoliday() { }
         public PublicHoliday(string name, DateTime date)
         {
             Name = name;
-            Date = date;
+            Year = date.Year;
+            Month = date.Month;
+            Day = date.Day;
         }
-        public PublicHoliday(string name, DateTime date, State[] states, string[] countries)
+        public PublicHoliday(string name, DateTime date, string country, State[]? states)
         {
             Name = name;
-            Date = date;
+            Year = date.Year;
+            Month = date.Month;
+            Day = date.Day;
             States = states;
-            Countries = countries;
+            Country = country;
         }
 
     }
@@ -47,13 +57,12 @@ namespace BusinessDays.Models
     {
         public override State Read(ref Utf8JsonReader reader, Type typeToConvert, JsonSerializerOptions options)
         {
-            string state = reader.GetString();
-            return (State)Enum.Parse(typeof(State), state, true);
+            return (State)Enum.Parse(typeof(State), reader.GetString(), true);
         }
 
         public override void Write(Utf8JsonWriter writer, State value, JsonSerializerOptions options)
         {
-            writer.WriteStringValue(value.ToString());
+            writer.WriteStringValue(value.ToString().ToLowerInvariant());
         }
     }
 }
